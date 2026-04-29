@@ -142,6 +142,23 @@ ASI 相当于文本优化任务中的"梯度"——这就是 GEPA 比 RL 快 35 
 | Databricks Agent | Claude Opus 4.1 | 开源模型+GEPA | 90x 更便宜 |
 | 评估效率 | RL: 5000~25000次 | GEPA: 100~500次 | 35x 更快 |
 
+## GEPA + DSPy 集成实验
+
+本仓库包含 GEPA 与 DSPy 集成的三种级别实验代码:
+
+```bash
+# 实验 4: GEPA + DSPy 集成 (Level 1-3)
+python experiments/04_gepa_dspy_integration.py
+```
+
+| Level | 内容 | 说明 |
+|-------|------|------|
+| Level 1 | 基础集成 | 优化 dspy.Predict 的 instructions |
+| Level 2 | ASI 诊断 | 捕获完整轨迹，生成可操作的诊断信息 |
+| Level 3 | 完整循环 | SELECT→EXECUTE→REFLECT→MUTATE→ACCEPT |
+
+关键洞察：DSPy 管"结构"，GEPA 管"内容"——两者正交。
+
 ## 与 RL/DSPy 的对比
 
 | 维度 | RL/GRPO | DSPy | **GEPA** |
